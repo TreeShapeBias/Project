@@ -1,0 +1,10 @@
+#run caster-site on all species tree directories. input = textfile containing a list of gene tree file names (all txt file and all gene tree newick strings present in each species tree folder) 
+
+for directory in *; do
+        # Change to the subdirectory
+        cd "$directory" || exit
+        echo "Inside directory: $directory"
+        ../../ASTER/bin/caster-site -i fastafilelist.txt -o casteroutput.txt -f list
+        cd ..
+done
+

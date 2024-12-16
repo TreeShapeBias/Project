@@ -1,0 +1,10 @@
+#run ASTRID-II on all species tree directories. input = .tre file containing newick strings for each gene tree, each on one line. 
+
+for directory in *; do
+        # Change to the subdirectory
+        cd "$directory" || exit
+        echo "Inside directory: $directory"
+        ../../ASTRID/bazel-bin/src/ASTRID -i all_g_trees.tre -o astridoutput.txt
+        cd ..
+done
+
